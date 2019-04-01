@@ -17,18 +17,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 ext {
     androidXVersion = '1.0.0'
-    butterKnifeVersion = '10.1.0'
+    butterKnifeVersion = '10.0.0'
     graphVersion = '4.2.2'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:$androidXVersion"
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
 
     // ButterKnife
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"

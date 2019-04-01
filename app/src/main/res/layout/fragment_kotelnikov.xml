@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/labelPlot1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/bigText"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:text="@string/labelPlot1"/>
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/plot1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heightPlot"
+            android:layout_below="@id/labelPlot1"/>
+
+        <TextView
+            android:id="@+id/labelPlot2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/plot1"
+            android:textSize="@dimen/bigText"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:text="@string/labelPlot2"/>
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/plot2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heightPlot"
+            android:layout_below="@id/labelPlot2"/>
+
+    </RelativeLayout>
+</ScrollView>
