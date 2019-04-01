@@ -11,13 +11,15 @@ import static root.iv.digitalsignalprocessing.func.Worker.kotelnikov;
 public class DigitalCommand implements SignalCommand {
     private double d;
     private double[] x;
+    private int k;
 
-    public DigitalCommand(int n, double d, double delta) {
+    public DigitalCommand(int n, double delta, double d, int k) {
         this.d = d;
         double step = delta/n;
         x = new double[n+1];
         for (int i = 0; i <= n; i++)
             x[i] = -delta/2 + i*step;
+        this.k = k;
     }
 
     @Override
@@ -38,14 +40,13 @@ public class DigitalCommand implements SignalCommand {
         return x[x.length-1];
     }
 
-    @Override
-    public int getCount() {
-        return x.length;
+    public void setK(int k) {
+        this.k = k;
     }
 
     @Override
     public DataPoint[] rec() {
-        int nRec = (x.length-1)/10;
+        int nRec = (x.length-1)/k;
         double delta = getB()-getA();
         double dt = (delta/2) /(nRec-1);
         List<Double> xRec = new LinkedList<>();
@@ -58,7 +59,7 @@ public class DigitalCommand implements SignalCommand {
     }
 
     private double digital(double x) {
-        return (x>-d /2 && x< d /2) ? 1.0 : 0.0;
+        return (x>-d/2 && x< d/2) ? 1.0 : 0.0;
     }
 
     private double[] digital(List<Double> x) {

@@ -24,10 +24,25 @@
             android:layout_below="@id/labelPlot1"/>
 
         <TextView
-            android:id="@+id/labelPlot2"
+            android:id="@+id/viewSeek"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/plot1"
+            android:textSize="@dimen/bigText"
+            android:textColor="@android:color/white"
+            android:textAlignment="center" />
+
+        <SeekBar
+            android:id="@+id/seek1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewSeek"/>
+
+        <TextView
+            android:id="@+id/labelPlot2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seek1"
             android:textSize="@dimen/bigText"
             android:textColor="@android:color/white"
             android:textAlignment="center"
@@ -37,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/heightPlot"
             android:layout_below="@id/labelPlot2"/>
+
 
     </RelativeLayout>
 </ScrollView>
