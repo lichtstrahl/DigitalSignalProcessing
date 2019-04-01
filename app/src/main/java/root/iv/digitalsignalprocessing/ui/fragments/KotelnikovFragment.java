@@ -1,7 +1,6 @@
 package root.iv.digitalsignalprocessing.ui.fragments;
 
 import android.os.Bundle;
-import android.os.WorkSource;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import root.iv.digitalsignalprocessing.R;
+import root.iv.digitalsignalprocessing.func.DigitalCommand;
 import root.iv.digitalsignalprocessing.func.Worker;
 
 public class KotelnikovFragment extends Fragment {
@@ -28,7 +28,9 @@ public class KotelnikovFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_kotelnikov, container, false);
         ButterKnife.bind(this, view);
         getActivity().setTitle(R.string.lab1);
-        Worker.runG(plot1, 5, 100, 2.0);
+        DigitalCommand digitalCommand = new DigitalCommand(100, 4, 8);
+        Worker.runGauss(plot1, 5, 100, 2.0);
+        Worker.runDigital(plot2, digitalCommand);
         return view;
     }
 
