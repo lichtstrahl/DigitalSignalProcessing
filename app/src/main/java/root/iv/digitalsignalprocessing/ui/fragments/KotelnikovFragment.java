@@ -22,7 +22,7 @@ import root.iv.digitalsignalprocessing.func.GaussCommand;
 import root.iv.digitalsignalprocessing.func.Worker;
 
 public class KotelnikovFragment extends Fragment {
-    private static final int INIT_K = 12;
+    private static final int INIT_K = 5;
     @BindView(R.id.plot1)
     GraphView plot1;
     @BindView(R.id.plot2)

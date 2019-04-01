@@ -48,7 +48,7 @@ public class DigitalCommand implements SignalCommand {
     public DataPoint[] rec() {
         int nRec = (x.length-1)/k;
         double delta = getB()-getA();
-        double dt = (delta/2) /(nRec-1);
+        double dt = (delta) /(nRec);
         List<Double> xRec = new LinkedList<>();
         for (double t = -delta/2; t < delta/2; t += dt)
             xRec.add(t);
