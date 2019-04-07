@@ -1,5 +1,6 @@
 package root.iv.digitalsignalprocessing.ui.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +21,10 @@ import root.iv.digitalsignalprocessing.app.App;
 import root.iv.digitalsignalprocessing.func.DigitalCommand;
 import root.iv.digitalsignalprocessing.func.GaussCommand;
 import root.iv.digitalsignalprocessing.func.Worker;
+import root.iv.digitalsignalprocessing.ui.DrawerClosed;
 
 public class KotelnikovFragment extends Fragment {
-    private static final int INIT_K = 5;
+    private static final int INIT_K = 1;
     @BindView(R.id.plot1)
     GraphView plot1;
     @BindView(R.id.plot2)
@@ -33,6 +35,7 @@ public class KotelnikovFragment extends Fragment {
     TextView viewSeek;
     GaussCommand gaussCommand = new GaussCommand(100, 20, 2.0, INIT_K);
     DigitalCommand digitalCommand = new DigitalCommand(100, 20, 10, INIT_K);
+    DrawerClosed activity;
 
     @Nullable
     @Override
@@ -66,9 +69,21 @@ public class KotelnikovFragment extends Fragment {
 
             }
         });
+        activity.closeDrawer();
         return view;
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        activity = (DrawerClosed)context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        activity = null;
+    }
 
     public static KotelnikovFragment getInstance() {
         KotelnikovFragment fragment = new KotelnikovFragment();

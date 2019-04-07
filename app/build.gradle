@@ -32,6 +32,7 @@ ext {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:$androidXVersion"
+    implementation "androidx.core:core:$androidXVersion"
 
     // ButterKnife
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"
@@ -43,4 +44,7 @@ dependencies {
     // RxJava
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+
+    // Design
+    implementation "com.google.android.material:material:1.1.0-alpha03"
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuNavigationLab1"
+        android:title="@string/lab1"
+        android:icon="@drawable/ic_filter_1"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menuNavigationLab2"
+        android:title="@string/lab2"
+        android:icon="@drawable/ic_filter_2"
+        app:showAsAction="ifRoom" />
+</menu>
