@@ -31,18 +31,18 @@ public class Worker {
         return result;
     }
 
-    public static void drawKotelnikov(GraphView plot, SignalCommand cmd) {
+    public static void drawKotelnikov(GraphView plot, SignalCommand cmd, int c1, int c2) {
         plot.removeAllSeries();
         DataPoint[] points = cmd.run();
 
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(points);
-        series.setColor(Color.YELLOW);
+        series.setColor(c1);
         series.setThickness(8);
         plot.addSeries(series);
 
         DataPoint[] rec = cmd.rec();
         LineGraphSeries<DataPoint> recSerises = new LineGraphSeries<>(rec);
-        recSerises.setColor(Color.RED);
+        recSerises.setColor(c2);
         recSerises.setThickness(3);
         plot.addSeries(recSerises);
 

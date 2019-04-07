@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.Viewport;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,9 +44,10 @@ public class KotelnikovFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_kotelnikov, container, false);
         ButterKnife.bind(this, view);
         getActivity().setTitle(R.string.lab1);
-
-        Worker.drawKotelnikov(plot1, gaussCommand);
-        Worker.drawKotelnikov(plot2, digitalCommand);
+        final int color1 = getContext().getResources().getColor(R.color.colorGraph1);
+        final int color2 = getContext().getResources().getColor(R.color.colorGraph2);
+        Worker.drawKotelnikov(plot1, gaussCommand, color1, color2);
+        Worker.drawKotelnikov(plot2, digitalCommand, color1, color2);
         seek1.setMax(20);
         seek1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -53,10 +55,12 @@ public class KotelnikovFragment extends Fragment {
                 final int min = INIT_K;
                 int value = min + progress;
                 gaussCommand.setK(value);
-                Worker.drawKotelnikov(plot1, gaussCommand);
+
+                Worker.drawKotelnikov(plot1, gaussCommand, color1, color2);
                 digitalCommand.setK(value);
-                Worker.drawKotelnikov(plot2, digitalCommand);
+                Worker.drawKotelnikov(plot2, digitalCommand, color1, color2);
                 viewSeek.setText(String.valueOf(value));
+
             }
 
             @Override
