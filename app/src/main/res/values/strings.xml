@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DigitalSignalProcessing</string>
+    <string name="lab1">Лабораторная 1</string>
+    <string name="labelPlot1">График 1</string>
+    <string name="labelPlot2">График 2</string>
+    <string name="lab2">Лабораторная 2</string>
 </resources>

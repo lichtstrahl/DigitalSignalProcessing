@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="heightPlot">280dp</dimen>
+    <dimen name="bigText">24sp</dimen>
+    <dimen name="height_appbar">200dp</dimen>
+</resources>
